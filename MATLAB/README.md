@@ -1,1 +1,1 @@
-This includes any MATLAB code used as well as any collected data.
+This folder includes any MATLAB code used as well as the collected data.
