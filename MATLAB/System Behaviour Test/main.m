@@ -3,9 +3,9 @@ clc
 close all  
 
 %% Simulation at the up position
-tspan = 0:0.01:35;  %simulation time
+tspan = 0:0.01:35;  %robotSimulation time
 y0 = [0,0,pi/180,0]; %initial states
-[t,y] = ode45(@(t,y)sim(y,0),tspan,y0); %compute simulation
+[t,y] = ode45(@(t,y)robotSim(y,0),tspan,y0); %compute robotSimulation
 
 
 %Plot
@@ -20,17 +20,17 @@ yyaxis right
 plot(t, y(:,1));
 ylabel('Robot Position (m)');
 ylim([-0.1 0.1]);
-saveas(a, 'PlotUp.png');
+% saveas(a, 'PlotUp.png');
 
-% % Animation, uncomment to see simulation
+% % Animation, uncomment to see robotSimulation
 % figure();
 % for k=1:length(t)
 %    animation(y(k,:));
 % end
 
-%% simulation at the down position
+%% Simulation at the down position
 y0 = [0,0,pi/180+pi,0];
-[t,y] = ode45(@(t,y)sim(y,0),tspan,y0);
+[t,y] = ode45(@(t,y)robotSim(y,0),tspan,y0);
 
 %Plot
 
@@ -47,7 +47,7 @@ plot(t, y(:,1));
 ylabel('Robot Position (m)');
 % ylim([-5*10^-3 5*10^-3]);
 ylim([-2*10^-3 2*10^-3]);
-saveas(b, 'PlotDown.png');
+% saveas(b, 'PlotDown.png');
 
 % %Animation
 % figure();
@@ -58,7 +58,7 @@ saveas(b, 'PlotDown.png');
 
 %% Simulation of 12V actuation
 y0 = [0,0,pi,0];
-[t,y] = ode45(@(t,y)sim(y,12),tspan,y0);
+[t,y] = ode45(@(t,y)robotSim(y,12),tspan,y0);
 
 
 %Plot
@@ -71,7 +71,7 @@ xlabel('Time (s)');
 yyaxis right
 plot(t, y(:,1));
 ylabel('Robot Position (m)');
-saveas(c, 'Plot12V.png');
+% saveas(c, 'Plot12V.png');
 
 % % Animation
 % figure();
@@ -82,7 +82,7 @@ saveas(c, 'Plot12V.png');
 
 %% Simulation of 1V actuation
 y0 = [0,0,pi,0];
-[t,y] = ode45(@(t,y)sim(y,1),tspan,y0);
+[t,y] = ode45(@(t,y)robotSim(y,1),tspan,y0);
 
 
 d = figure('Renderer', 'painters', 'Position', [10 10 1100 450]);
@@ -96,7 +96,7 @@ yyaxis right
 plot(t, y(:,1));
 ylabel('Robot Position (m)');
 ylim([0 3]);
-saveas(d, 'Plot1V.png');
+% saveas(d, 'Plot1V.png');
 
 % % Animation
 % figure();
