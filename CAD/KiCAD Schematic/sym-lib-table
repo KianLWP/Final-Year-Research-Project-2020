@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "Flow Deck v2")(type Legacy)(uri "${KIPRJMOD}/Flow Deck v2.lib")(options "")(descr ""))
+)
