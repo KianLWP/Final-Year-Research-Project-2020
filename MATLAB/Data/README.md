@@ -1,1 +1,1 @@
-Data represented in the results section can be found here. The grapher.m file was used to export an image from the data.
+Data represented in and the code used to export graphs found in the results section can be found here.
